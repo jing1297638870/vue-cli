@@ -1,0 +1,102 @@
+html {
+	font-size: 20px;
+}
+
+@media only screen and (min-width: 400px) {
+	html {
+		font-size: 21.33333333px !important;
+	}
+}
+
+@media only screen and (min-width: 414px) {
+	html {
+		font-size: 22.08px !important;
+	}
+}
+
+@media only screen and (min-width: 480px) {
+	html {
+		font-size: 25.6px !important;
+	}
+}
+
+html {
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	font-size: .7rem;
+}
+
+a {
+	text-decoration: none;
+	color: #666;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+/*
+reset
+*/
+
+body,
+p,
+ul,
+ol,
+li,
+form,
+dl,
+dt,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5 {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	line-height: 1.5;
+	font-size: .6rem;
+	font-family: "Microsoft Yahei", "Helvetica Neue", Helvetica, sans-serif;
+}
+
+input,
+textarea {
+	font-family: "Microsoft Yahei", "Helvetica Neue", Helvetica, sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-touch-callout: none;
+}
+
+// 万能清除法
+.clearfix:after {
+	content: "";
+	display: block;
+	height: 0;
+	clear: both;
+}
+
+.clearfix {
+	zoom: 1;
+}
+
+::-webkit-input-placeholder {
+	color: #999;
+	font-size: .65rem;
+}
+
+input,
+textarea {
+	outline: none;
+}
+
