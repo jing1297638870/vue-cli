@@ -47,6 +47,9 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     /**
+     * 数据联调时，协议是HTTPS：
+          protocolRewrite: 'https', 
+          secure:false,
      * 前端开发数据交互node端代理的说明
      * 示例中： /api/act 代表接口的基本地址
      * @target： 目标服务器的地址
