@@ -13,13 +13,16 @@ const router = new Router({
   mode: 'hash',
   //mode: 'history',
   routes: [
-    //错误页
     {
       path: PREFIX + '/index', 
       name: 'index',
       component: () => import('@/views/index')
     },
-    
+    {
+      path: PREFIX + '/photo', 
+      name: 'photo',
+      component: () => import('@/views/photo')
+    },
   ]
 });
 

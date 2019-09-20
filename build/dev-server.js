@@ -45,10 +45,10 @@ compiler.plugin('compilation', function (compilation) {
 
 // proxy all method to GET
 //使用正式的接口数据时，该段要注释掉
-// app.use(function(req,res,next){
-//   req.method = 'GET';
-//   next();
-// });
+app.use(function(req,res,next){
+  req.method = 'GET';
+  next();
+});
 
 
 

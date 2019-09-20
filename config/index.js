@@ -42,7 +42,7 @@ module.exports = {
   },
   dev: {
     env: require('./dev.env'),
-    port: 8899,
+    port: 9999,
     autoOpenBrowser: true,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
@@ -57,27 +57,27 @@ module.exports = {
      * @ pathRewrite:  将当前路径，重定向到目标路径，可以用于调试
      * 以下示例，即可将 this.$http.get('/api/act',...)  转发到 this.$http.get('http://localhost:8080//static/mock',...)
      */
-    // proxyTable: {
-    //   '/api/act': {
-    //     target: 'http://localhost:8899/',
-    //     changeOrigin: true,
-    //     pathRewrite: {
-    //       '^/api/act': '/static/mock'
-    //     }
-    //   }
+    proxyTable: {
+      '/api/act': {
+        target: 'http://localhost:9999/',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api/act': '/static/mock'
+        }
+      }
 
     /**
      * 服务端的一个示例
      * 该示例即可将 /api/act/get_data.json 转发到   http://192.168.3.33:8080/api/act/get_data.json
      */
-      proxyTable: {
-        '/api/vue': {
-          target:'http://192.168.2.34:8081',
-          changeOrigin: true,
-          pathRewrite: {
-            '^/api/vue': '/api/vue'
-          }
-        }            
+      // proxyTable: {
+      //   '/api/vue': {
+      //     target:'http://192.168.2.34:8081',
+      //     changeOrigin: true,
+      //     pathRewrite: {
+      //       '^/api/vue': '/api/vue'
+      //     }
+      //   }            
     },
     // CSS Sourcemaps off by default because relative paths are "buggy"
     // with this option, according to the CSS-Loader README
