@@ -18,7 +18,7 @@ export default {
 .sd-cp {
 	width: 100%;
 	margin: 0 auto;
-	padding: 2rem 0 2.8rem;
+	padding: px2rem(20) 0;
 	text-align: center;
 	position: relative;
 	color: #ccc; 

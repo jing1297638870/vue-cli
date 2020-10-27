@@ -5,7 +5,7 @@
             <i class="iconfont icon-shanchu" @click.stop.prevent="delRecord"></i>
         </div>
 
-        <div class="up-image-record">
+        <div class="up-image-record" v-if="btnFlag">
             <i class="iconfont icon-paizhao" @click="image"></i>
             <i class="iconfont icon-luyin" v-if="record" @click="openRecord"></i>
         </div>
@@ -47,6 +47,14 @@ export default {
         },
         attachList:{
             type:Array
+        },
+        imgNum:{
+        	type:Number,
+          default:9
+        },
+        btnFlag:{
+        	type:Boolean,
+          default:true
         }
     },
     data() {
@@ -125,7 +133,7 @@ export default {
         image(){
             this.local = [];
             var imgCount = this.localIds.length;
-            if (imgCount >= 9) {
+            if (imgCount >= this.imgNum) {
                 Toast("最多只能上传9张图片！");
                 return false;
             }
@@ -206,17 +214,17 @@ export default {
                     saveTypes:imgList[0].saveTypes,
                 });
 				if (imgList[0]['saveTypes'] == "微信") {
-					wx.ready(function() {
+					wx.ready(() => {
 						wx.downloadImage({
 							serverId: imgList[0]['accessPath'], // 需要下载的图片的服务器端ID，由uploadImage接口获得
 							isShowProgressTips: 0,// 默认为1，显示进度提示
 							success: (res) => {
-                                this.localIds.push(res.localId);
+                this.localIds.push(res.localId);
 								imgList.shift();
 								this.downloadImage(imgList);
 							},
-							fail: () => {
-                                this.localIds.push(require('../assets/images/fail.png'));
+							fail: (err) => {
+                this.localIds.push(require('../assets/images/fail.png'));
 								imgList.shift();
 								this.downloadImage(imgList);
 							}

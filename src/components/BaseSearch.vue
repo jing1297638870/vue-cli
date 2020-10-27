@@ -54,11 +54,13 @@ export default {
         border-radius:px2rem(10); 
         background:#fff; 
         input{
+        	  box-sizing: border-box; 
             border-radius:px2rem(10); 
             padding-right:px2rem(10);        
             height:px2rem(60);
             display:block;
-            border:0;  
+            border:0;
+            width:calc(100% - 50px);
             color:#333;         
         }
         .iconfont{

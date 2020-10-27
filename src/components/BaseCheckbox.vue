@@ -7,19 +7,19 @@
                     <label style="color:#999" v-if="x.status&&x.status!=1">{{x.name}}
                         <div class="float-right">未关注</div>
                     </label>
-                    <label v-if="x.status&&x.status==1&&x.isCc==='1'">{{x.name}}
+                    <label v-else-if="x.status&&x.status==1&&x.isCc==='1'">{{x.name}}
                         <div class="float-right">
                             <input type="checkbox" name="checkbox" disabled="disabled" class="mint-checkbox-input" checked>
                             <span class="mint-checkbox-core"></span>
                         </div>
                     </label>
-                    <label v-if="x.status&&x.status==1&&x.isCc==='0'">{{x.name}}
+                    <label v-else-if="x.status&&x.status==1&&x.isCc==='0'">{{x.name}}
                         <div class="float-right">
                             <input type="checkbox" name="checkbox" class="mint-checkbox-input" :value="x" v-model="value">
                             <span class="mint-checkbox-core"></span>
                         </div>
                     </label>  
-                    <label v-if="(x.status&&x.status==1 || !x.status) && !x.isCc">{{x.name}}
+                    <label v-else-if="(x.status&&x.status==1 || !x.status) && !x.isCc">{{x.name}}
                         <div class="float-right">
                             <input type="checkbox" name="checkbox" class="mint-checkbox-input" :value="x" v-model="value">
                             <span class="mint-checkbox-core"></span>

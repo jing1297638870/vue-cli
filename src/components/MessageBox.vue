@@ -4,8 +4,8 @@
             <div class="title" v-html="title"></div>
             <div class="text" v-html="message"></div>
             <div class="choose-btn display-flex">
-                <div class="flex-1" v-if="cancleBtn" @click="flag=false">取消</div>
-                <div class="enter flex-1" @click="enter">确定</div>
+                <div class="flex-1" v-if="cancleBtn" @click="closeBox">{{cancleText}}</div>
+                <div class="enter flex-1" @click="enter">{{enterText}}</div>
             </div> 
         </div>
     </div>
@@ -26,6 +26,14 @@ export default {
         title:{
             type:String,
             default:'提示'
+        },
+        enterText:{
+        	type:String,
+          default:'确定'
+        },
+        cancleText:{
+        	type:String,
+          default:'取消'
         }
     },
     data() {
@@ -40,6 +48,10 @@ export default {
         },
         open(){
             this.flag = true;
+        },
+        closeBox() {
+        	this.flag = false;
+          this.$emit('close');
         }
     },
     mounted(){

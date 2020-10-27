@@ -3,7 +3,7 @@
         <div class="app-flex">
             <base-search v-if="nodeList.length>10" ref="search" v-model="filterText" @input="filterNode"></base-search>
             <ul class="app-content img-text-list">
-                <li class="list plist" v-for="x in nodeList" :key="x.id">
+                <li class="list plist" v-for="(x,index) in nodeList" :key="index">
                     <label style="color:#999" v-if="x.status&&x.status!=='1'">{{x.name}}
                         <div class="float-right">未关注</div>
                     </label>

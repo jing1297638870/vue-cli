@@ -104,8 +104,8 @@ export default {
                 this.searchTreeNodes.forEach((obj,i) => {
                     let arr = obj.getPath();
                     this.searchTreeNodes[i].title = '';
-                    arr.forEach(item => {
-                        this.searchTreeNodes[i].title = this.searchTreeNodes[i].title + '/' + item.name;
+                    arr.forEach((item,j) => {
+                        if(j<arr.length-1) this.searchTreeNodes[i].title = this.searchTreeNodes[i].title + '/' + item.name;
                     })               
                     this.searchTreeNodes[i].title = this.searchTreeNodes[i].title.substring(1);
                 });
@@ -225,8 +225,8 @@ export default {
             this.tempNodes.forEach((obj,i) => {
                 let arr = obj.getPath();
                 this.tempNodes[i].title = '';
-                arr.forEach(item => {
-                    this.tempNodes[i].title = this.tempNodes[i].title + '/' + item.name;
+                arr.forEach((item,j) => {
+                  if(j<arr.length-1) this.tempNodes[i].title = this.tempNodes[i].title + '/' + item.name;
                 })               
                 this.tempNodes[i].title = this.tempNodes[i].title.substring(1);
             });
